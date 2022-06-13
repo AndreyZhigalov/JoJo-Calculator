@@ -1,0 +1,63 @@
+$screenColor: #b859fc;
+$borderColor: #f0f0f0;
+$buttonColor: #b246ff;
+$textColor: #ffffff;
+$backgroundColor: black;
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: $backgroundColor;
+}
+.calculator {
+    margin: 5% auto;
+    background-image: url(/JoJo-calculator/img/calculator-body.jpg);
+    background-size: cover;
+    border: 1px solid $screenColor;
+    box-shadow: 0 0 40px $screenColor;
+    width: 330px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    border-radius: 20px;
+}
+.calculator__keyboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 290px;
+    height: 75%;
+}
+.calculator__screen {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: end;
+    color: $textColor;
+    background-color: $screenColor;
+    border: $borderColor solid 2px;
+    border-radius: 10px;
+    width: 290px;
+    height: 70px;
+    padding: 5px 10px;
+    font-size: 25px;
+    overflow: hidden;
+}
+.calculator__button {
+    background-color: $buttonColor;
+    border: $borderColor solid 2px;
+    border-radius: 10px;
+    color: $textColor;
+    font-size: 30px;
+    min-width: 67px;
+    height: 67px;
+}
+.calculator__button:active {
+    background-color: $screenColor;
+    border: $borderColor solid 2px;
+    border-radius: 10px;
+    color: $borderColor;
+}

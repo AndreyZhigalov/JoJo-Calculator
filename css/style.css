@@ -1,0 +1,86 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+.calculator {
+  margin: 5% auto;
+  background-image: url(/JoJo-calculator/img/calculator-body.jpg);
+  background-size: cover;
+  border: 1px solid #b859fc;
+  -webkit-box-shadow: 0 0 40px #b859fc;
+          box-shadow: 0 0 40px #b859fc;
+  width: 330px;
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-bottom: 20px;
+  border-radius: 20px;
+}
+
+.calculator__keyboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 290px;
+  height: 75%;
+}
+
+.calculator__screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: end;
+  color: #ffffff;
+  background-color: #b859fc;
+  border: #f0f0f0 solid 2px;
+  border-radius: 10px;
+  width: 290px;
+  height: 70px;
+  padding: 5px 10px;
+  font-size: 25px;
+  overflow: hidden;
+}
+
+.calculator__button {
+  background-color: #b246ff;
+  border: #f0f0f0 solid 2px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 30px;
+  min-width: 67px;
+  height: 67px;
+}
+
+.calculator__button:active {
+  background-color: #b859fc;
+  border: #f0f0f0 solid 2px;
+  border-radius: 10px;
+  color: #f0f0f0;
+}
