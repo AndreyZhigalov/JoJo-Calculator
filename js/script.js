@@ -16,8 +16,11 @@ function inputGetter(i) {
                 operator == "-"? screen.innerHTML = Number(numbers[0]) - Number(numbers[1]):
                 operator == "/"? screen.innerHTML = (Number(numbers[0]) / Number(numbers[1])):
                 operator == "*"? screen.innerHTML = Number(numbers[0]) * Number(numbers[1]):
+                operator == "^" && numbers[1] == ""? screen.innerHTML = Math.pow(Number(numbers[0]), 2):
                 operator == "^"? screen.innerHTML = Math.pow(Number(numbers[0]), Number(numbers[1])):
-                operator == "√"? screen.innerHTML = Math.pow(Number(numbers[0]), (1/Number(numbers[1]))):
+                operator == "√" && numbers[0] == ""? screen.innerHTML = Math.pow(Number(numbers[1]), (1/2)):
+                operator == "√" && numbers[1] == ""? screen.innerHTML = Math.pow(Number(numbers[0]), (1/2)):
+                operator == "√" ? screen.innerHTML = Number(numbers[0]) * Math.pow(Number(numbers[1]), 1/2):
                 operator == "%" && numbers[1] == "" ? screen.innerHTML = `${(numbers[0] / 100)}%`:
                 operator == "%" && numbers[1] != "" ? screen.innerHTML = `${((Number(numbers[1])/ 100) * Number(numbers[0])).toFixed(2)}`: false;
                  
