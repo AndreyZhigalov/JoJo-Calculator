@@ -31,9 +31,11 @@ function inputGetter(i) {
         screen.innerHTML += i.target.value;
     }
 }
+const fontResize = () => screen.innerHTML.length > 17 ? screen.style.fontSize = "20px": screen.style.fontSize = "25px";
 /*
 ЧЕКЕР КНОПОК
 */ 
 for(let i=0 ; i<buttons.length; i++) {
     buttons[i].addEventListener("click", inputGetter)
 }
+buttons[19].addEventListener("click", fontResize) // проверяет длинну выводимого числа и меняет размер шрифта
