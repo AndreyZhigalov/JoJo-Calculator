@@ -1,11 +1,5 @@
-/*
-Создание обьекта из кнопок ввода
-*/ 
-const inputs = Object.create(Object.prototype);
+/*JoJo Calculator*/ 
 const buttons = document.getElementsByClassName('calculator__button');
-for (let i = 0; i < buttons.length; i++) {
-    inputs[buttons[i].id] = buttons[i]
-}
 const screen = document.getElementById('screen');
 /* ФУНКЦИЯ КАЛЬКУЛЯТОР И ВЫВОД НА ЭКРАН*/ 
 function inputGetter(i) {
@@ -40,9 +34,6 @@ function inputGetter(i) {
 /*
 ЧЕКЕР КНОПОК
 */ 
-function buttonChecker() {
-    for(let i in inputs) {
-        inputs[i].addEventListener("click", inputGetter)
-    }
+for(let i=0 ; i<buttons.length; i++) {
+    buttons[i].addEventListener("click", inputGetter)
 }
-buttonChecker()

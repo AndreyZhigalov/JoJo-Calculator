@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Martel+Sans&display=swap");
+:root {
+  font-family: "Kdam Thmor Pro", sans-serif;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -76,6 +81,17 @@ body {
   font-size: 30px;
   min-width: 67px;
   height: 67px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+}
+
+#minus, #dot {
+  line-height: 20px;
+  font-size: 50px;
+}
+
+#equal, #plus {
+  line-height: 20px;
+  font-size: 40px;
 }
 
 .calculator__button:active {
