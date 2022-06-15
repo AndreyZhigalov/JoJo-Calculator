@@ -1,7 +1,11 @@
-/*JoJo Calculator*/ 
-const buttons = document.getElementsByClassName('calculator__button');
-const screen = document.getElementById('screen');
-/* ФУНКЦИЯ КАЛЬКУЛЯТОР И ВЫВОД НА ЭКРАН*/ 
+/*      
+        СОХРАНЕНИЕ КНОПОК И ЭКРАНА В ПЕРЕМЕННОЙ
+*/
+const buttons = document.querySelectorAll('.calculator__button');
+const screen = document.querySelector('#screen');
+/*      
+        ФУНКЦИЯ КАЛЬКУЛЯТОР И ВЫВОД НА ЭКРАН
+*/ 
 function inputGetter(i) {
  if (i.target.value == '=') {
         let numbers = screen.innerHTML.split(/\/|\*|[+-]|\^|√|%/).map(i => Number(i));
@@ -31,11 +35,14 @@ function inputGetter(i) {
         screen.innerHTML += i.target.value;
     }
 }
+/*
+    ИЗМЕНЕНИЕ РАЗМЕРА ШРИФТА НА ЭКРАНЕ
+*/ 
 const fontResize = () => screen.innerHTML.length > 17 ? screen.style.fontSize = "20px": screen.style.fontSize = "25px";
 /*
-ЧЕКЕР КНОПОК
+         ОТСЛЕЖИВАНИЕ НАЖАТИЙ КНОПОК
 */ 
 for(let i=0 ; i<buttons.length; i++) {
     buttons[i].addEventListener("click", inputGetter)
+    buttons[i].id == "equal"? buttons[i].addEventListener("click", fontResize): false;
 }
-buttons[19].addEventListener("click", fontResize) // проверяет длинну выводимого числа и меняет размер шрифта
