@@ -36,13 +36,34 @@ function inputGetter(i) {
     }
 }
 /*
-    ИЗМЕНЕНИЕ РАЗМЕРА ШРИФТА НА ЭКРАНЕ
+    ИЗМЕНЕНИЕ РАЗМЕРА ШРИФТА НА ЭКРАНЕ,
+    АНИМАЦИЯ ПРИ ЛОЖНОМ ОТВЕТЕ
 */ 
-const fontResize = () => screen.innerHTML.length > 17 ? screen.style.fontSize = "20px": screen.style.fontSize = "25px";
+const resultChecker = () => {
+    screen.innerHTML.length > 17 ? screen.style.fontSize = "20px": screen.style.fontSize = "25px";
+    // ВЫЗОВ СТЭНДА
+    if (screen.innerHTML == "NaN") {
+        screen.innerHTML = "ゴゴゴゴゴゴゴゴゴゴ"
+        document.querySelector(".calculator").setAttribute("class", "calculator wrongResult");
+        document.querySelector(".calculator__keyboard").setAttribute("class", "calculator__keyboard standMessageWrong")
+        this.setTimeout(() => {
+            document.querySelector(".calculator").setAttribute("class", "calculator");
+            document.querySelector(".calculator__keyboard").setAttribute("class", "calculator__keyboard")
+        }, 2000); 
+    } else if (screen.innerHTML == "Infinity") {
+        document.querySelector(".calculator").setAttribute("class", "calculator infinity")
+        document.querySelector(".calculator__keyboard").setAttribute("class", "calculator__keyboard standMessageInfinity")
+        this.setTimeout(() => {
+            document.querySelector(".calculator").setAttribute("class", "calculator")
+            document.querySelector(".calculator__keyboard").setAttribute("class", "calculator__keyboard")
+        }, 2000); 
+    }
+};
 /*
          ОТСЛЕЖИВАНИЕ НАЖАТИЙ КНОПОК
 */ 
 for(let i=0 ; i<buttons.length; i++) {
     buttons[i].addEventListener("click", inputGetter)
-    buttons[i].id == "equal"? buttons[i].addEventListener("click", fontResize): false;
+    buttons[i].id == "equal"? buttons[i].addEventListener("click", resultChecker): false;
 }
+

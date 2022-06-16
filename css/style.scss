@@ -10,15 +10,41 @@ $fontCommon: 'Martel Sans', sans-serif;
 
 :root {
    font-family: $fontStrong;
+   color: $textColor;
 }
 * {
     box-sizing: border-box;
 }
-body {
-    background-color: $backgroundColor;
+html {
+    overflow-x: hidden;
+    scrollbar-width: none; 
+    body {
+        background-color: $backgroundColor;
+        background-size: 100vw 100vh ; 
+        width: 100vw;
+        height: 100vh;
+        min-height: 660px;
+        min-width: 330px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
+  html::-webkit-scrollbar {
+    display: none;
+}
+
+h1 {
+    font: 800 35px $fontStrong;
+    text-align: center;
+    margin-bottom: 10px;
+}
+/*
+    ОБОЛОЧКА КАЛЬКУЛЯТОРА
+*/ 
 .calculator {
-    margin: 5% auto;
+    position: relative;
     background-image: url(https://andreyzhigalov.github.io/JoJo-Calculator/img/calculator-body.jpg);
     background-size: cover;
     border: 1px solid $screenColor;
@@ -32,6 +58,7 @@ body {
     border-radius: 20px;
 }
 .calculator__keyboard {
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -53,7 +80,9 @@ body {
     padding: 5px 10px;
     font-size: 25px;
     overflow: hidden;
+    position: relative;
 }
+
 .calculator__button {
     background-color: $buttonColor;
     border: $borderColor solid 2px;
@@ -77,4 +106,161 @@ body {
     border: $borderColor solid 2px;
     border-radius: 10px;
     color: $borderColor;
+}
+
+/*
+            АНИМАЦИЯ
+*/ 
+.wrongResult::before {
+    content: url(/JoJo-calculator/img/starplatinumLooksRight.png);
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    opacity: 0%;
+    z-index: -1;
+    animation: falseResult 2s linear 1;
+   }
+   @keyframes falseResult {
+       0% {
+           z-index: -1;
+           filter: brightness(1000%);
+           bottom: -100px;
+           right: -100px;
+       }
+       10% {
+           z-index: 1;
+           opacity: 100%;
+           filter: brightness(100%);
+           bottom: -20px;
+           right: 0;
+       }
+       90% {
+           z-index: 1;
+           opacity: 100%;
+           filter: brightness(100%);
+           right: 50px;
+           bottom: -20px;
+       }
+       100% {
+           z-index: -1;
+           filter: brightness(1000%);
+           bottom: -20px;
+           right: 200px;
+       }
+   }
+   .infinity::after {
+       content: url(/JoJo-calculator/img/starplatinumAngry.png);
+       position: absolute;
+       bottom: -50px;
+       opacity: 0%;
+       z-index: -1;
+       animation: infinityAnswer 2s linear 1;
+      }
+   
+   @keyframes infinityAnswer {
+       0% {
+           z-index: 1;
+           filter: brightness(1000%);
+           bottom: -100px;
+       }
+       10% {
+           z-index: 1;
+           opacity: 100%;
+           filter: brightness(100%);
+           bottom: -60px;
+       }
+       90% {
+           z-index: 1;
+           opacity: 100%;
+           filter: brightness(100%);
+           bottom: -50px;
+       }
+       100% {
+           z-index: 1;
+           filter: brightness(1000%);
+           bottom: -100px;
+       }
+   }
+
+.standMessageInfinity::after {
+    position: absolute;
+    content: "Я ТЕБЯ НА НОЛЬ ПОМНОЖУ!";
+    font: 800 20px $fontStrong;
+    color: $textColor;
+    width: 250px;
+    height: 70px;
+    border-bottom: $borderColor 3px solid;
+    background-color: $backgroundColor;
+    border-radius: 20px;
+    text-align: center;
+    top: -80px;
+    right: 0;
+    animation: standSpeak 2s linear 1;
+    opacity: 0%;
+    z-index: 2;
+}
+.standMessageInfinity::before {
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 7px;
+    transform: rotate(-35deg);
+    transform-origin: right;
+    background-color: $borderColor;
+    top: -25px;
+    right: 0;
+    z-index: 1;
+    border-radius: 50%;
+    animation: standSpeak 2s linear 1;
+    opacity: 0%;
+}
+
+.standMessageWrong::after {
+    position: absolute;
+    content: "ВОТ САМ ЭТО И РЕШАЙ... ПОКА";
+    font: 800 20px $fontStrong;
+    color: $textColor;
+    width: 250px;
+    height: 70px;
+    border-top: $borderColor 3px solid;
+    background-color: $backgroundColor;
+    border-radius: 20px 36px 20px 20px;
+    text-align: center;
+    top: 50px;
+    right: 0;
+    animation: standSpeak 2s linear 1;
+    opacity: 0%;
+    z-index: 1;
+}
+.standMessageWrong::before {
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 7px;
+    transform: rotate(35deg);
+    transform-origin: right;
+    background-color: $borderColor;
+    top: 65px;
+    right: 4px;
+    z-index: 2;
+    border-radius: 50%;
+    animation: standSpeak 2s linear 1;
+    opacity: 0%;
+}
+
+@keyframes standSpeak {
+    0% {
+        filter: brightness(1000%);
+    }
+    10% {
+        filter: brightness(100%);
+        opacity: 100%;
+    }
+    90% {
+        filter: brightness(100%);
+        opacity: 100%;
+    }
+    100% {
+        filter: brightness(1000%);
+    }
 }
