@@ -111,15 +111,16 @@ h1 {
 /*
             АНИМАЦИЯ
 */ 
-.wrongResult::before {
-    content: url(https://andreyzhigalov.github.io/JoJo-Calculator/img/starplatinumLooksRight.png);
-    position: absolute;
-    bottom: -100px;
-    right: -100px;
-    opacity: 0%;
-    z-index: -1;
-    animation: falseResult 2s linear 1;
-   }
+ .wrongResult::before {
+        content: url(https://andreyzhigalov.github.io/JoJo-Calculator/img/starplatinumLooksRight.png);
+        position: absolute;
+        bottom: -100px;
+        right: -100px;
+        opacity: 0%;
+        z-index: -1;
+        animation: falseResult 2s linear 1;
+ }
+
    @keyframes falseResult {
        0% {
            z-index: -1;
