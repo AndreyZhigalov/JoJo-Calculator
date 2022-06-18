@@ -477,13 +477,13 @@ h1 {
   border: #282828 solid 2px;
 }
 .calculator2 .calculator__button:active {
-  background-color: rgb(225, 180, 0);
-  color: rgb(40, 40, 40);
+  background-color: #e1b400;
+  color: #282828;
   border: #282828 solid 2px;
 }
 .calculator2 .calculator__screen {
   background-color: rgb(255, 204, 0);
-  color: rgb(40, 40, 40);
+  color: #282828;
   border: #282828 solid 2px;
 }
 .calculator2 .wrongResult::before {

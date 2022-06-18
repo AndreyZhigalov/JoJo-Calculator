@@ -323,13 +323,13 @@ h1 {
         border: $speedwagonBorderColor solid 2px;
     }
     .calculator__button:active {
-        background-color: rgb(225, 180, 0);
-        color: rgb(40, 40, 40);
+        background-color: $speedwagonBackgroundColor;
+        color: $speedwagonTextColor;
         border: $speedwagonBorderColor solid 2px;
     }
     .calculator__screen {
         background-color: rgb(255, 204, 0);
-        color: rgb(40, 40, 40);
+        color: $speedwagonTextColor;
         border: $speedwagonBorderColor solid 2px;
     }
     .wrongResult::before {
