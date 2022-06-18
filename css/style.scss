@@ -328,7 +328,7 @@ h1 {
         border: $speedwagonBorderColor solid 2px;
     }
     .calculator__screen {
-        background-color: rgb(255, 204, 0);
+        background-color: $speedwagonScreenColor;
         color: $speedwagonTextColor;
         border: $speedwagonBorderColor solid 2px;
     }
