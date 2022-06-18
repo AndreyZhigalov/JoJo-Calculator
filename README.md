@@ -2,7 +2,7 @@
 ## The best calculator ever, just because it's JoJo on background.
 Of course it's not the only reason.
 
-##Benefits
+## Benefits
 ✅ It's able to call a stand!<br>
 ✅ JS written with OOP principle<br>
 ✅ Free interface customization<br>
