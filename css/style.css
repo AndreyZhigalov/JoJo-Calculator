@@ -451,7 +451,7 @@ h1 {
     КАЛЬКУЛЯТОР СО СПИДВАГОНОМ
 */
 .calculator2 {
-  background-image: url(/JoJo-calculator/img/SpeedwagonCalculatorBody.jpg);
+  background-image: url(https://andreyzhigalov.github.io/JoJo-Calculator/img/SpeedwagonCalculatorBody.jpg);
   position: relative;
   background-size: cover;
   border: 1px solid #e1b400;
@@ -487,10 +487,10 @@ h1 {
   border: #282828 solid 2px;
 }
 .calculator2 .wrongResult::before {
-  content: url(/JoJo-calculator/img/SpeedwagonLooksRight.png);
+  content: url(https://andreyzhigalov.github.io/JoJo-Calculator/img/SpeedwagonLooksRight.png);
 }
 .calculator2 .infinity::after {
-  content: url(/JoJo-calculator/img/SpeedwagonAngry.png);
+  content: url(https://andreyzhigalov.github.io/JoJo-Calculator/img/SpeedwagonAngry.png);
 }
 .calculator2 .standMessageInfinity::after {
   content: "У ФОНДА НЕТ СТОЛЬКО ЦИФР!";
