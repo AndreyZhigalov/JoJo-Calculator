@@ -1,8 +1,7 @@
 # JoJo-Calculator
 ## The best calculator ever, just because it's JoJo on background.
-Of course it's not the only reason.
+Of course it's not the only reason.<br>
 
-## Benefits
 ✅ It's able to call a stand!<br>
 ✅ JS written with OOP principle<br>
 ✅ Free interface customization<br>
