@@ -14,7 +14,12 @@ html {
   overflow-x: hidden;
   scrollbar-width: none;
 }
-html body {
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
   background-color: #34014b;
   background-size: 100vw 100vh;
   width: 100vw;
@@ -36,14 +41,31 @@ html body {
           align-items: center;
 }
 
-html::-webkit-scrollbar {
-  display: none;
-}
-
 h1 {
   font: 800 35px "Kdam Thmor Pro", sans-serif;
   text-align: center;
   margin-bottom: 10px;
+  border-bottom: #ffffff 2px solid;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 700px;
+  width: 700px;
 }
 
 /*
@@ -223,6 +245,7 @@ h1 {
   content: url(https://andreyzhigalov.github.io/JoJo-Calculator/img/starplatinumAngry.png);
   position: absolute;
   bottom: -50px;
+  left: -50px;
   opacity: 0%;
   z-index: -1;
   -webkit-animation: infinityAnswer 2s linear 1;
@@ -326,7 +349,7 @@ h1 {
 
 .standMessageWrong::after {
   position: absolute;
-  content: "ВОТ САМ ЭТО И РЕШАЙ... ПОКА";
+  content: "やれやれ だぜ... можно попроще что-то?";
   font: 800 20px "Kdam Thmor Pro", sans-serif;
   color: #ffffff;
   width: 250px;
@@ -335,6 +358,7 @@ h1 {
   background-color: #34014b;
   border-radius: 20px 36px 20px 20px;
   text-align: center;
+  vertical-align: middle;
   top: 50px;
   right: 0;
   -webkit-animation: standSpeak 2s linear 1;
@@ -402,4 +426,103 @@ h1 {
     -webkit-filter: brightness(1000%);
             filter: brightness(1000%);
   }
+}
+@media (max-width: 560px) {
+  body {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .main {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
+    min-height: 1250px;
+    width: 350px;
+  }
+}
+/*
+    КАЛЬКУЛЯТОР СО СПИДВАГОНОМ
+*/
+.calculator2 {
+  background-image: url(/JoJo-calculator/img/SpeedwagonCalculatorBody.jpg);
+  position: relative;
+  background-size: cover;
+  border: 1px solid #e1b400;
+  -webkit-box-shadow: 0 0 40px #e1b400;
+          box-shadow: 0 0 40px #e1b400;
+  width: 330px;
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-bottom: 20px;
+  border-radius: 20px;
+}
+.calculator2 .calculator__button {
+  background-color: #ffcc00;
+  color: #282828;
+  border: #282828 solid 2px;
+}
+.calculator2 .calculator__button:active {
+  background-color: rgb(225, 180, 0);
+  color: rgb(40, 40, 40);
+  border: #282828 solid 2px;
+}
+.calculator2 .calculator__screen {
+  background-color: rgb(255, 204, 0);
+  color: rgb(40, 40, 40);
+  border: #282828 solid 2px;
+}
+.calculator2 .wrongResult::before {
+  content: url(/JoJo-calculator/img/SpeedwagonLooksRight.png);
+}
+.calculator2 .infinity::after {
+  content: url(/JoJo-calculator/img/SpeedwagonAngry.png);
+}
+.calculator2 .standMessageInfinity::after {
+  content: "У ФОНДА НЕТ СТОЛЬКО ЦИФР!";
+  color: #282828;
+  border-bottom: #282828 3px solid;
+  background-color: #e1b400;
+  -webkit-box-shadow: #e1b400 0 0 20px;
+          box-shadow: #e1b400 0 0 20px;
+  top: -80px;
+  right: 0;
+}
+.calculator2 .standMessageInfinity::before {
+  -webkit-transform: rotate(-35deg);
+          transform: rotate(-35deg);
+  background-color: #282828;
+  -webkit-box-shadow: #e1b400 0 0 20px;
+          box-shadow: #e1b400 0 0 20px;
+  top: -25px;
+  right: 0;
+}
+.calculator2 .standMessageWrong::after {
+  content: "ХАМОН ЗДЕСЬ БЕССИЛЕН";
+  color: #282828;
+  border-top: #282828 3px solid;
+  background-color: #e1b400;
+  -webkit-box-shadow: #e1b400 0 0 20px;
+          box-shadow: #e1b400 0 0 20px;
+}
+.calculator2 .standMessageWrong::before {
+  -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+  background-color: #282828;
+  -webkit-box-shadow: #e1b400 0 0 20px;
+          box-shadow: #e1b400 0 0 20px;
 }

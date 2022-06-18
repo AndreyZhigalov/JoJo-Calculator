@@ -1,16 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Martel+Sans&display=swap');
-
-$screenColor: #b859fc;
-$borderColor: #f0f0f0;
-$buttonColor: #b246ff;
-$textColor: #ffffff;
-$backgroundColor: #34014b;
 $fontStrong: 'Kdam Thmor Pro', sans-serif;
 $fontCommon: 'Martel Sans', sans-serif;
 
+// цвета Джотаро
+$jotaroScreenColor: #b859fc;
+$jotaroBorderColor: #f0f0f0;
+$jotaroButtonColor: #b246ff;
+$jotaroTextColor: #ffffff;
+$jotaroBackgroundColor: #34014b;
+
+// цвета Спидвагона
+$speedwagonScreenColor: #ffce0b;
+$speedwagonBorderColor: #282828;
+$speedwagonButtonColor: #ffcc00;
+$speedwagonTextColor: #282828;
+$speedwagonBackgroundColor: #e1b400;
+
 :root {
    font-family: $fontStrong;
-   color: $textColor;
+   color: $jotaroTextColor;
 }
 * {
     box-sizing: border-box;
@@ -18,27 +26,36 @@ $fontCommon: 'Martel Sans', sans-serif;
 html {
     overflow-x: hidden;
     scrollbar-width: none; 
-    body {
-        background-color: $backgroundColor;
-        background-size: 100vw 100vh ; 
-        width: 100vw;
-        height: 100vh;
-        min-height: 660px;
-        min-width: 330px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
 }
   html::-webkit-scrollbar {
     display: none;
 }
-
+body {
+    background-color: $jotaroBackgroundColor;
+    background-size: 100vw 100vh ; 
+    width: 100vw;
+    height: 100vh;
+    min-height: 660px;
+    min-width: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 h1 {
     font: 800 35px $fontStrong;
     text-align: center;
     margin-bottom: 10px;
+    border-bottom: $jotaroTextColor 2px solid;
+}
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 700px;
+    width: 700px;
 }
 /*
     ОБОЛОЧКА КАЛЬКУЛЯТОРА
@@ -47,8 +64,8 @@ h1 {
     position: relative;
     background-image: url(https://andreyzhigalov.github.io/JoJo-Calculator/img/calculator-body.jpg);
     background-size: cover;
-    border: 1px solid $screenColor;
-    box-shadow: 0 0 40px $screenColor;
+    border: 1px solid $jotaroScreenColor;
+    box-shadow: 0 0 40px $jotaroScreenColor;
     width: 330px;
     height: 600px;
     display: flex;
@@ -71,9 +88,9 @@ h1 {
     justify-content: flex-end;
     align-items: center;
     text-align: end;
-    color: $textColor;
-    background-color: $screenColor;
-    border: $borderColor solid 2px;
+    color: $jotaroTextColor;
+    background-color: $jotaroScreenColor;
+    border: $jotaroBorderColor solid 2px;
     border-radius: 10px;
     width: 290px;
     height: 70px;
@@ -82,12 +99,11 @@ h1 {
     overflow: hidden;
     position: relative;
 }
-
 .calculator__button {
-    background-color: $buttonColor;
-    border: $borderColor solid 2px;
+    background-color: $jotaroButtonColor;
+    border: $jotaroBorderColor solid 2px;
     border-radius: 10px;
-    color: $textColor;
+    color: $jotaroTextColor;
     font-size: 30px;
     min-width: 67px;
     height: 67px;
@@ -102,16 +118,18 @@ h1 {
     font-size: 40px;
 }
 .calculator__button:active {
-    background-color: $screenColor;
-    border: $borderColor solid 2px;
+    background-color: $jotaroScreenColor;
+    border: $jotaroBorderColor solid 2px;
     border-radius: 10px;
-    color: $borderColor;
+    color: $jotaroBorderColor;
 }
 
 /*
             АНИМАЦИЯ
 */ 
- .wrongResult::before {
+
+    // СТЭНД ПРИ ВЫВОДЕ ЗНАЧЕНИЯ NaN
+.wrongResult::before {
         content: url(https://andreyzhigalov.github.io/JoJo-Calculator/img/starplatinumLooksRight.png);
         position: absolute;
         bottom: -100px;
@@ -149,14 +167,17 @@ h1 {
            right: 200px;
        }
    }
-   .infinity::after {
+
+   // СТЭНД ПРИ ВЫВОДЕ ЗНАЧЕНИЯ Infinity
+.infinity::after {
        content: url(https://andreyzhigalov.github.io/JoJo-Calculator/img/starplatinumAngry.png);
        position: absolute;
        bottom: -50px;
+       left: -50px;
        opacity: 0%;
        z-index: -1;
        animation: infinityAnswer 2s linear 1;
-      }
+    }
    
    @keyframes infinityAnswer {
        0% {
@@ -182,16 +203,16 @@ h1 {
            bottom: -100px;
        }
    }
-
+//  ОКОШКО С СООБЩЕНИЕМ
 .standMessageInfinity::after {
     position: absolute;
     content: "Я ТЕБЯ НА НОЛЬ ПОМНОЖУ!";
     font: 800 20px $fontStrong;
-    color: $textColor;
+    color: $jotaroTextColor;
     width: 250px;
     height: 70px;
-    border-bottom: $borderColor 3px solid;
-    background-color: $backgroundColor;
+    border-bottom: $jotaroBorderColor 3px solid;
+    background-color: $jotaroBackgroundColor;
     border-radius: 20px;
     text-align: center;
     top: -80px;
@@ -200,6 +221,7 @@ h1 {
     opacity: 0%;
     z-index: 2;
 }
+// ЛИНИЯ ДИАЛОГОВОГО ОКОШКА
 .standMessageInfinity::before {
     position: absolute;
     content: "";
@@ -207,7 +229,7 @@ h1 {
     height: 7px;
     transform: rotate(-35deg);
     transform-origin: right;
-    background-color: $borderColor;
+    background-color: $jotaroBorderColor;
     top: -25px;
     right: 0;
     z-index: 1;
@@ -215,24 +237,26 @@ h1 {
     animation: standSpeak 2s linear 1;
     opacity: 0%;
 }
-
+//  ОКОШКО С СООБЩЕНИЕМ 2
 .standMessageWrong::after {
     position: absolute;
-    content: "ВОТ САМ ЭТО И РЕШАЙ... ПОКА";
+    content: "やれやれ だぜ... можно попроще что-то?";
     font: 800 20px $fontStrong;
-    color: $textColor;
+    color: $jotaroTextColor;
     width: 250px;
     height: 70px;
-    border-top: $borderColor 3px solid;
-    background-color: $backgroundColor;
+    border-top: $jotaroBorderColor 3px solid;
+    background-color: $jotaroBackgroundColor;
     border-radius: 20px 36px 20px 20px;
     text-align: center;
+    vertical-align: middle;
     top: 50px;
     right: 0;
     animation: standSpeak 2s linear 1;
     opacity: 0%;
     z-index: 1;
 }
+// ЛИНИЯ ДИАЛОГОВОГО ОКОШКА 2
 .standMessageWrong::before {
     position: absolute;
     content: "";
@@ -240,7 +264,7 @@ h1 {
     height: 7px;
     transform: rotate(35deg);
     transform-origin: right;
-    background-color: $borderColor;
+    background-color: $jotaroBorderColor;
     top: 65px;
     right: 4px;
     z-index: 2;
@@ -248,7 +272,7 @@ h1 {
     animation: standSpeak 2s linear 1;
     opacity: 0%;
 }
-
+// ОБЩАЯ АНИМАЦИЯ СООБЩЕНИЙ СТЕНДА
 @keyframes standSpeak {
     0% {
         filter: brightness(1000%);
@@ -263,5 +287,88 @@ h1 {
     }
     100% {
         filter: brightness(1000%);
+    }
+}
+@media (max-width: 560px) {
+    body {
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .main {
+        justify-content: center;
+        align-content: space-between;
+        min-height: 1250px;
+        width: 350px;
+    }
+}
+/*
+    КАЛЬКУЛЯТОР СО СПИДВАГОНОМ
+*/ 
+.calculator2 {
+    background-image: url(/JoJo-calculator/img/SpeedwagonCalculatorBody.jpg);
+    position: relative;
+    background-size: cover;
+    border: 1px solid $speedwagonBackgroundColor;
+    box-shadow: 0 0 40px $speedwagonBackgroundColor;
+    width: 330px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    .calculator__button {
+        background-color: $speedwagonButtonColor;
+        color: $speedwagonTextColor;
+        border: $speedwagonBorderColor solid 2px;
+    }
+    .calculator__button:active {
+        background-color: rgb(225, 180, 0);
+        color: rgb(40, 40, 40);
+        border: $speedwagonBorderColor solid 2px;
+    }
+    .calculator__screen {
+        background-color: rgb(255, 204, 0);
+        color: rgb(40, 40, 40);
+        border: $speedwagonBorderColor solid 2px;
+    }
+    .wrongResult::before {
+        content: url(/JoJo-calculator/img/SpeedwagonLooksRight.png);
+    }
+    // СТЭНД ПРИ ВЫВОДЕ ЗНАЧЕНИЯ Infinity
+    .infinity::after {
+        content: url(/JoJo-calculator/img/SpeedwagonAngry.png);
+    }
+    //  ОКОШКО С СООБЩЕНИЕМ
+    .standMessageInfinity::after {
+        content: "У ФОНДА НЕТ СТОЛЬКО ЦИФР!";
+        color: $speedwagonTextColor;
+        border-bottom: $speedwagonBorderColor 3px solid;
+        background-color: $speedwagonBackgroundColor;
+        box-shadow: $speedwagonBackgroundColor 0 0 20px;
+        top: -80px;
+        right: 0;
+    }
+    // ЛИНИЯ ДИАЛОГОВОГО ОКОШКА
+    .standMessageInfinity::before {
+        transform: rotate(-35deg);
+        background-color: $speedwagonBorderColor;
+        box-shadow: $speedwagonBackgroundColor 0 0 20px;
+        top: -25px;
+        right: 0;
+    }
+    //  ОКОШКО С СООБЩЕНИЕМ 2
+    .standMessageWrong::after {
+        content: "ХАМОН ЗДЕСЬ БЕССИЛЕН";
+        color: $speedwagonTextColor;
+        border-top: $speedwagonBorderColor 3px solid;
+        background-color: $speedwagonBackgroundColor;
+        box-shadow: $speedwagonBackgroundColor 0 0 20px;
+    }
+    // ЛИНИЯ ДИАЛОГОВОГО ОКОШКА 2
+    .standMessageWrong::before {
+        transform: rotate(35deg);
+        background-color: $speedwagonBorderColor;
+        box-shadow: $speedwagonBackgroundColor 0 0 20px;
     }
 }
