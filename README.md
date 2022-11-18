@@ -1,13 +1,11 @@
-# JoJo-Calculator
-## The best calculator ever, just because it's JoJo on background.
-Of course it's not the only reason.<br>
+# JoJo калькулятор
+⭐ andreyzhigalov.github.io/JoJo-Calculator/ ⭐
 
-✅ It's able to call a stand!<br>
-✅ JS written with OOP principle<br>
-✅ Free interface customization<br>
-✅ Jotaro Kujo with Star Platinum<br>
-✅ Robert Speedwagon with sexuality<br>
+Скорее шуточный проект, который я делал забавы ради 🙃 \
+Простой калькулятор на нативном Javascript, с анимацией при "NaN" и "Infinity".
 
-I did my best to write small and readable code with OOP, and used Sass with BEM to style an interface.
-
-Enjoy!
+✅ Классы ES6 \
+✅ Чистый JS \
+🔥 JoJo \
+🔥 Speedwagon \
+🔥 Стенды 
