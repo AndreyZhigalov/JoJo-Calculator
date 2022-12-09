@@ -1,76 +1,79 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Джоджо калькулятор, вызывающий стенд Стар Платинум. 
-    А также Спидвагон калькулятор, вызывающий его сексуальность.">
-    <meta name="keywords" content="джоджо,спидвагон,стар,платинум,стар платинум,джотаро,куджо,калькулятор,дио,аниме,стенд,калькулятор джоджо, джоджо калькулятор,jojo,speedwagon,calculator,stand,star,platinum">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Джоджо калькулятор, вызывающий стенд Стар Платинум. А также Спидвагон калькулятор, вызывающий его сексуальность."
+    />
+    <meta
+      name="keywords"
+      content="джоджо,спидвагон,стар,платинум,стар платинум,джотаро,куджо,калькулятор,дио,аниме,стенд,калькулятор джоджо, джоджо калькулятор,jojo,speedwagon,calculator,stand,star,platinum"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <title>JoJolator</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>JoJo Калькулятор</h1>
-    <!--  Тело калькулятора  -->
     <div class="main">
-        <div class="calculator" id="jotaro">
-            <div class="calculator__animation-point"></div>
-            <div class="calculator__keyboard">
-                <div class="calculator__screen" id="display">0</div>
-                <button type="button" class="calculator__button" id="percent" value="%">%</button>
-                <button type="button" class="calculator__button" id="powers" value="^">x^</button>
-                <button type="button" class="calculator__button" id="radix" value="√">√x</button>
-                <button type="button" class="calculator__button" id="divide" value="/">/</button>
-                <button type="button" class="calculator__button" id="seven" value="7">7</button>
-                <button type="button" class="calculator__button" id="eight" value="8">8</button>
-                <button type="button" class="calculator__button" id="nine" value="9">9</button>
-                <button type="button" class="calculator__button" id="multiply" value="*">X</button>
-                <button type="button" class="calculator__button" id="four" value="4">4</button>
-                <button type="button" class="calculator__button" id="five" value="5">5</button>
-                <button type="button" class="calculator__button" id="six" value="6">6</button>
-                <button type="button" class="calculator__button" id="subtract" value="-">-</button>
-                <button type="button" class="calculator__button" id="one" value="1">1</button>
-                <button type="button" class="calculator__button" id="two" value="2">2</button>
-                <button type="button" class="calculator__button" id="three" value="3">3</button>
-                <button type="button" class="calculator__button" id="add" value="+">+</button>
-                <button type="button" class="calculator__button" id="clear" value="AC">AC </button>
-                <button type="button" class="calculator__button" id="zero" value="0">0</button>
-                <button type="button" class="calculator__button" id="decimal" value=".">.</button>
-                <button type="button" class="calculator__button" id="equals" value="=">=</button>
-            </div>
+      <div class="calculator" id="jotaro">
+        <div class="calculator__animation-point"></div>
+        <div class="calculator__keyboard">
+          <div class="calculator__screen" id="display">0</div>
+          <button type="button" class="calculator__button" id="percent" value="%">%</button>
+          <button type="button" class="calculator__button" id="powers" value="^">x^</button>
+          <button type="button" class="calculator__button" id="radix" value="√">√x</button>
+          <button type="button" class="calculator__button" id="divide" value="/">/</button>
+          <button type="button" class="calculator__button" id="seven" value="7">7</button>
+          <button type="button" class="calculator__button" id="eight" value="8">8</button>
+          <button type="button" class="calculator__button" id="nine" value="9">9</button>
+          <button type="button" class="calculator__button" id="multiply" value="*">X</button>
+          <button type="button" class="calculator__button" id="four" value="4">4</button>
+          <button type="button" class="calculator__button" id="five" value="5">5</button>
+          <button type="button" class="calculator__button" id="six" value="6">6</button>
+          <button type="button" class="calculator__button" id="subtract" value="-">-</button>
+          <button type="button" class="calculator__button" id="one" value="1">1</button>
+          <button type="button" class="calculator__button" id="two" value="2">2</button>
+          <button type="button" class="calculator__button" id="three" value="3">3</button>
+          <button type="button" class="calculator__button" id="add" value="+">+</button>
+          <button type="button" class="calculator__button" id="clear" value="AC">AC</button>
+          <button type="button" class="calculator__button" id="zero" value="0">0</button>
+          <button type="button" class="calculator__button" id="decimal" value=".">.</button>
+          <button type="button" class="calculator__button" id="equals" value="=">=</button>
         </div>
-        <div class="calculator2" id="speedwagon">
-            <div class="calculator__animation-point"></div>
-            <div class="calculator__keyboard">
-                <div class="calculator__screen" id="display">0</div>
-                <button type="button" class="calculator__button" id="percent" value="%">%</button>
-                <button type="button" class="calculator__button" id="powers" value="^">x^</button>
-                <button type="button" class="calculator__button" id="radix" value="√">√x</button>
-                <button type="button" class="calculator__button" id="divide" value="/">/</button>
-                <button type="button" class="calculator__button" id="seven" value="7">7</button>
-                <button type="button" class="calculator__button" id="eight" value="8">8</button>
-                <button type="button" class="calculator__button" id="nine" value="9">9</button>
-                <button type="button" class="calculator__button" id="multiply" value="*">X</button>
-                <button type="button" class="calculator__button" id="four" value="4">4</button>
-                <button type="button" class="calculator__button" id="five" value="5">5</button>
-                <button type="button" class="calculator__button" id="six" value="6">6</button>
-                <button type="button" class="calculator__button" id="subtract" value="-">-</button>
-                <button type="button" class="calculator__button" id="one" value="1">1</button>
-                <button type="button" class="calculator__button" id="two" value="2">2</button>
-                <button type="button" class="calculator__button" id="three" value="3">3</button>
-                <button type="button" class="calculator__button" id="add" value="+">+</button>
-                <button type="button" class="calculator__button" id="clear" value="AC">AC </button>
-                <button type="button" class="calculator__button" id="zero" value="0">0</button>
-                <button type="button" class="calculator__button" id="decimal" value=".">.</button>
-                <button type="button" class="calculator__button" id="equals" value="=">=</button>
-            </div>
+      </div>
+      <div class="calculator2" id="speedwagon">
+        <div class="calculator__animation-point"></div>
+        <div class="calculator__keyboard">
+          <div class="calculator__screen" id="display">0</div>
+          <button type="button" class="calculator__button" id="percent" value="%">%</button>
+          <button type="button" class="calculator__button" id="powers" value="^">x^</button>
+          <button type="button" class="calculator__button" id="radix" value="√">√x</button>
+          <button type="button" class="calculator__button" id="divide" value="/">/</button>
+          <button type="button" class="calculator__button" id="seven" value="7">7</button>
+          <button type="button" class="calculator__button" id="eight" value="8">8</button>
+          <button type="button" class="calculator__button" id="nine" value="9">9</button>
+          <button type="button" class="calculator__button" id="multiply" value="*">X</button>
+          <button type="button" class="calculator__button" id="four" value="4">4</button>
+          <button type="button" class="calculator__button" id="five" value="5">5</button>
+          <button type="button" class="calculator__button" id="six" value="6">6</button>
+          <button type="button" class="calculator__button" id="subtract" value="-">-</button>
+          <button type="button" class="calculator__button" id="one" value="1">1</button>
+          <button type="button" class="calculator__button" id="two" value="2">2</button>
+          <button type="button" class="calculator__button" id="three" value="3">3</button>
+          <button type="button" class="calculator__button" id="add" value="+">+</button>
+          <button type="button" class="calculator__button" id="clear" value="AC">AC</button>
+          <button type="button" class="calculator__button" id="zero" value="0">0</button>
+          <button type="button" class="calculator__button" id="decimal" value=".">.</button>
+          <button type="button" class="calculator__button" id="equals" value="=">=</button>
         </div>
-    <!--  \\ Тело калькулятора  -->
+      </div>
+    </div>
     <script src="js/jotarolator.js"></script>
     <script src="js/script.js"></script>
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-</body>
+  </body>
 </html>

@@ -24,7 +24,7 @@ class Calculator {
         this.inputGetter = (i) => {
             if (i.target.value == '=') {
                 this.buttons[18].removeAttribute("disabled")
-                
+
                 let str = this.screen.innerText.replaceAll(this.squereRegex, "($2**(1/2))")
                     .replaceAll(this.powerRegex, "($1**$3)")
                     .replace(/^(\d[\\.\d]*)(%)/, "$1/100")
@@ -55,19 +55,19 @@ class Calculator {
                 } else if (this.screen.innerText === "0") {
                     this.allOperators.test(value) ? this.screen.innerText = "0" + value : this.screen.innerText = value
                 } else if (this.allOperators.test(value)) {
-                    this.buttons[18].removeAttribute("disabled")                    
+                    this.buttons[18].removeAttribute("disabled")
                     if (value === "-" && this.screen.innerText.match(this.endsWithOperator)?.[0].length < 2) {
                         this.screen.innerText += value
                     } else if (this.allOperators.test(lastValue)) {
-                          if (lastValue !== "-" ) {
-                              if (value === "%" && this.screen.innerText.match(/%+$/)?.[0].length === 0) {
-                                  this.screen.innerText += value
-                              } else if (lastValue === "%" && value !== "%") {
-                                  this.screen.innerText += value
-                              } else {
-                                  this.screen.innerText = [...this.screen.innerText.slice(0, -1), value].join("")
-                              }
-                            
+                        if (lastValue !== "-") {
+                            if (value === "%" && this.screen.innerText.match(/%+$/)?.[0].length === 0) {
+                                this.screen.innerText += value
+                            } else if (lastValue === "%" && value !== "%") {
+                                this.screen.innerText += value
+                            } else {
+                                this.screen.innerText = [...this.screen.innerText.slice(0, -1), value].join("")
+                            }
+
                         }
                     } else {
                         this.screen.innerText += value
