@@ -17,10 +17,11 @@ $speedwagonTextColor: #282828;
 $speedwagonBackgroundColor: #e1b400;
 
 :root {
-   font-family: $fontStrong;
+
    color: $jotaroTextColor;
 }
 * {
+    font-family: $fontStrong;
     box-sizing: border-box;
 }
 html {
@@ -42,12 +43,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-h1 {
-    font: 800 35px $fontStrong;
-    text-align: center;
-    margin-bottom: 10px;
-    border-bottom: $jotaroTextColor 2px solid;
-}
+
 .main {
     display: flex;
     flex-direction: row;
