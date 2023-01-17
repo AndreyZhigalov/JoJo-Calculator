@@ -61,24 +61,33 @@ class Calculator {
                     this.allOperators.test(value) && value !== "\u221a" && value !== "-" ? this.screen.innerText = "0" + value : this.screen.innerText = value
 
                 } else if (this.allOperators.test(value)) {
-                    this.buttons.forEach(button => button.id === "decimal" ? button.removeAttribute("disabled") : false)                    
+                    this.buttons.forEach(button => button.id === "decimal" ? button.removeAttribute("disabled") : false)
 
                     if (value === "-" && this.screen.innerText.match(this.endsWithOperator)?.[0].length < 2) {
                         this.screen.innerText += value
-                        
+
                     } else if (this.allOperators.test(lastValue)) {
                         if (lastValue !== "-") {
+
                             if (value === "%" && this.screen.innerText.match(/%+$/)?.[0].length === 0) {
                                 this.screen.innerText += value
 
-                            } else if (lastValue === "%" && value !== "%") {
+                            } else if (lastValue === "%" && value !== "%" && value !== "^" && value !== "\u221a") {
                                 this.screen.innerText += value
 
+                            } else if (value === "\u221a" && this.screen.innerText.match(/\u221a+$/) === null) {
+                                if (this.screen.innerText.match(/[\/\*\-\+\u221a\^\%]+$/)?.[0].length === 1 && lastValue !== "^" && lastValue !== "%") this.screen.innerText += value
+
                             } else {
-                                this.screen.innerText = [...this.screen.innerText.slice(0, -1), value].join("")                                
+                                this.screen.innerText = [...this.screen.innerText.slice(0, -1), value].join("")
+
                             }
 
+                        } else if (value === "\u221a") {
+                            this.screen.innerText += value
+
                         }
+
                     } else {
                         this.screen.innerText += value
                     }
